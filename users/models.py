@@ -3,9 +3,9 @@ from django.contrib.auth.models import AbstractUser
 from django.forms import CharField
 
 class User(AbstractUser):
-    username = CharField(max_length = 255)
+    username = models.CharField(max_length = 255)
     email = models.CharField(max_length = 255, unique=True)
-    password = CharField(max_length=255)
+    password = models.CharField(max_length=255)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
